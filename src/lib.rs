@@ -1,18 +1,22 @@
 #![allow(dead_code)]
-
 #[derive(Debug)]
-pub struct Rect {
-pub width: u32,
-pub height: u32
+pub enum IpAddrKind {
+     V4(String),
+     V6(String),
 }
-impl Rect {
-    pub fn area(&self) -> u32{
-        self.width * self.height
+
+
+impl IpAddrKind {
+    pub fn route(a : IpAddrKind) -> String {
+        let a  = match a {
+            IpAddrKind::V4(a) => {
+                a
+            },
+            IpAddrKind::V6(a) => {
+                a
+            }
+        };
+        a
     }
-    pub fn width(&self) -> bool {
-        self.width > 0
-    }
-    pub fn can_hold(&self, other: &Rect) -> bool {
-        self.width > other.width && self.height > other.height
-    }
+    
 }

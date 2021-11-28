@@ -1,16 +1,14 @@
-use crate::lib::{Rect};
-mod lib;
+
+use rustydusty::{ IpAddrKind};
+
+// mod lib;
+
 fn main() {
-    let rect = Rect {
-        width: 10,
-        height: 50,
-    };
-    
-    if rect.width(){
-        println!("{:?}", rect.area());
-        println!("{}", rect.can_hold(&rect))
-    } else {
-        println!("width can be Zero[0]")
+    let x = [
+        IpAddrKind::V4(String::from("127.168.0.1")),
+        IpAddrKind::V6(String::from("39.168.24.3"))
+    ];
+    for i in x {
+        println!("{}", IpAddrKind::route(i))
     }
 }
-

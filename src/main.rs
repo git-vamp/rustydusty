@@ -1,15 +1,14 @@
 pub mod calc;
-use calc::largest::Largest;
+use calc::largest::Point;
 
 fn main() {
-    let a = Largest { v1: 3, v2: 4 };
-    let b = Largest { v1: 3.32, v2: 4.31 };
-    let c = Largest {
-        v1: String::from("hello"),
-        v2: String::from("yeas"),
-    };
-    println!("max: {:?} min: {:?}", a.bigger(), a.smaller());
-    println!("max: {:?} min: {:?}", b.bigger(), b.smaller());
-    println!("max: {:?} min: {:?}", c.bigger(), c.smaller());
+    let a = Point { x: 3, y: 4 };
+    let b = Point { x: 3.3, y: 4.3 };
+    let c = Point { x: 3, y: 4.3 };
+
+    // let b = point { v1: 3.32, v2: 4.31 };
+
+    // println!("{:?} ", a.);
+
 }
-// nail cutter
+

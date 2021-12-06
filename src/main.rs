@@ -1,14 +1,15 @@
-
-use rustydusty::{ IpAddrKind};
-
-// mod lib;
+pub mod calc;
+use calc::largest::Largest;
 
 fn main() {
-    let x = [
-        IpAddrKind::V4(String::from("127.168.0.1")),
-        IpAddrKind::V6(String::from("39.168.24.3"))
-    ];
-    for i in x {
-        println!("{}", IpAddrKind::route(i))
-    }
+    let a = Largest { v1: 3, v2: 4 };
+    let b = Largest { v1: 3.32, v2: 4.31 };
+    let c = Largest {
+        v1: String::from("hello"),
+        v2: String::from("yeas"),
+    };
+    println!("max: {:?} min: {:?}", a.bigger(), a.smaller());
+    println!("max: {:?} min: {:?}", b.bigger(), b.smaller());
+    println!("max: {:?} min: {:?}", c.bigger(), c.smaller());
 }
+// nail cutter
